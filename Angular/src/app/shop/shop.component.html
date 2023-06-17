@@ -1,0 +1,51 @@
+
+<div class="shop">
+  <div class="dumpling-container">
+    <app-dumpling *ngFor="let item of counter(quantity)" [color]="color"></app-dumpling>
+  </div>
+  <div class="dumpling-customizations">
+    <mat-card class="fillings selection-card">
+      <mat-card-title>Fillings</mat-card-title>
+      <mat-card-content>
+        <!-- TODO: #7. Create selectable controls with Angular Material -->
+        <mat-selection-list [(ngModel)]="selectedFillings" aria-label="Dumpling fillings">
+          <mat-list-option *ngFor="let flavor of fillings" [value]="flavor" color="primary">
+            {{ flavor }}
+          </mat-list-option>
+        </mat-selection-list>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="quantity selection-card">
+      <mat-card-title>Quantity</mat-card-title>
+      <mat-card-content>
+        <!-- TODO: #8. Provide control labels with ARIA -->
+        <mat-slider
+          aria-label="Dumpling order quantity slider"
+          id="quantity"
+          name="quantity"
+          color="primary"
+          class="quantity-slider"
+          [max]="13"
+          [min]="1"
+          [step]="1"
+          [tickInterval]="1"
+          thumbLabel
+          [(ngModel)]="quantity">
+        </mat-slider>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="color selection-card">
+      <mat-card-title>Color</mat-card-title>
+      <mat-card-content>
+        <app-color-picker [color]="color" (recolor)="changeColor($event)"></app-color-picker>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <!-- TODO: #6. Use Semantic HTML (& Angular Material!) -->
+  <button mat-flat-button
+    color="primary"
+    class="purchase-button"
+    (click)="fauxPurchase()">
+    Purchase
+  </button>
+</div>

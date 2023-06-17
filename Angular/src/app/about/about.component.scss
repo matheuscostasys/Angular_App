@@ -1,0 +1,28 @@
+
+:host {
+  display: flex;
+  justify-content: center;
+}
+
+.about {
+  width: 50%;
+  padding: 5%;
+
+  .center {
+    text-align: center;
+  }
+
+  .right {
+    text-align: right;
+  }
+
+  .spacer {
+    height: 10%;
+  }
+}
+
+:host-context(.dark-theme) {
+  .about {
+    color: #fff;
+  }
+}

@@ -1,0 +1,22 @@
+
+<div class="location-map">
+  <google-map
+    role="application"
+    height="50%"
+    width="100%"
+    [options]="options">
+    <map-marker [position]="markerPosition"
+                [options]="markerOptions"></map-marker>
+  </google-map>
+  <div class="details">
+    <h2>Find Us</h2>
+    <address class="address">
+      <div>123 Dolores Street</div>
+      <div>San Francisco, CA 94114</div>
+    </address>
+    <div class="hours">
+      <h3>Pickup Hours</h3>
+      <p>Monday to Friday, 10am to 6pm</p>
+    </div>
+  </div>
+</div>

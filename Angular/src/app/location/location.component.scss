@@ -1,0 +1,32 @@
+
+.location-map {
+  height: 100%;
+  text-align: -webkit-center;
+  padding: 5%;
+
+  .map-container {
+    border: #f0f8ff 2px solid;
+  }
+
+  .details {
+    margin: 5%;
+
+    .typography {
+      margin: .1rem;
+    }
+
+    .hours {
+      margin-top: 1rem;
+
+      h3 {
+        margin: 0;
+      }
+    }
+  }
+}
+
+:host-context(.dark-theme) {
+  .details {
+    color: #fff;
+  }
+}
